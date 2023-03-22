@@ -1,10 +1,11 @@
-package com.softwareinstitute.jones.maria.minesweeper;
+package com.softwareinstitute.minesweeper;
 
 
 public class Main {
     public static void main(String[] args) {
         Board board = new Board();
-        System.out.println(board.setMines());
+
+
     }
 
 
