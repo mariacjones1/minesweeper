@@ -1,11 +1,11 @@
 package com.softwareinstitute.jones.maria.minesweeper;
 
+import com.softwareinstitute.jones.maria.minesweeper.Board;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Board board = new Board();
     }
 
-    public static String helloMinesweeper() {
-        return "Hello minesweeper!";
-    }
+
 }
