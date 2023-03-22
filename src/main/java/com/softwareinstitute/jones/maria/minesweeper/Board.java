@@ -10,7 +10,7 @@ public class Board {
     int width = 10;
     private String[][] board = new String[length][width];
     int numberOfMines;
-    List<String> mines = new ArrayList<>();
+    public List<String> mines = new ArrayList<>();
 
 
     ////////////////////Constructors////////////////////
