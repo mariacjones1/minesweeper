@@ -1,8 +1,10 @@
 package com.softwareinstitute.minesweeper;
 
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Board {
     /////////////////////Attributes/////////////////////
@@ -24,23 +26,19 @@ public class Board {
     }
 
     //////////////////////Methods//////////////////////
-//    public List setMines() {
-//        if (length * width <= 100) {
-//            numberOfMines = 10;
-//        } else if (length * width <= 256) {
-//            numberOfMines = 40;
-//        } else {
-//            numberOfMines = 99;
-//        }
-//
-//        String minePosition;
-//        for (int mineNum = 0; mineNum < numberOfMines; mineNum++) {
-//            int row = (int) Math.floor(Math.random() * width);
-//            int col = (int) Math.floor(Math.random() * length);
-//            minePosition = "(" + row + ", " + col + ")";
-//            mines.add(minePosition);
-//        }
-//        return mines;
-//    }
-
+    public List placeMines(int numOfMines, int width, int length) {
+        Random random = new Random();
+        List<Point> mines = new ArrayList<>();
+        int placedMines = 0;
+        while (placedMines < numOfMines) {
+            int i = random.nextInt(width);
+            int j = random.nextInt(length);
+            Point mine = new Point(i, j);
+            if (!mines.contains(mine)) {
+                mines.add(new Point(i, j));
+                placedMines++;
+            }
+        }
+        return mines;
+    }
 }

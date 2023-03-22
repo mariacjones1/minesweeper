@@ -2,7 +2,7 @@ package com.softwareinstitute.minesweeper;
 
 public class Square {
     /////////////////////Attributes/////////////////////
-
+    public int row, col;
 
     ////////////////////Constructors////////////////////
 
