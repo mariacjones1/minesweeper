@@ -11,8 +11,8 @@ public class Board {
     int length = 10;
     int width = 10;
     private String[][] board = new String[length][width];
-    int numberOfMines;
-    public List<String> mines = new ArrayList<>();
+    int numOfMines = 10;
+    List<Point> mines = new ArrayList<>();
 
 
     ////////////////////Constructors////////////////////
@@ -28,7 +28,6 @@ public class Board {
     //////////////////////Methods//////////////////////
     public List placeMines(int numOfMines, int width, int length) {
         Random random = new Random();
-        List<Point> mines = new ArrayList<>();
         int placedMines = 0;
         while (placedMines < numOfMines) {
             int i = random.nextInt(width);
@@ -40,5 +39,23 @@ public class Board {
             }
         }
         return mines;
+    }
+
+    public void printUpdatedBoard(List clicks, List flags, List mines) {
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < length; j++) {
+                Point square = new Point(i, j);
+                if (clicks.contains(square) && mines.contains(square)) {
+                    System.out.print("✹ ");
+                } else if (clicks.contains(square)) {
+                    System.out.print("□ ");
+                } else if (flags.contains(square)) {
+                    System.out.print("⛝ ");
+                } else {
+                    System.out.print("○ ");
+                }
+            }
+            System.out.println();
+        }
     }
 }
