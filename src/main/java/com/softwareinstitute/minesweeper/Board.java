@@ -17,10 +17,12 @@ public class Board {
 
     ////////////////////Constructors////////////////////
     public Board() {
+        System.out.println("0 1 2 3 4 5 6 7 8 9");
         for (int i = 0; i < width; i++) {
             for(int j = 0; j < length; j++) {
                 System.out.print("□ ");
             }
+            System.out.print(i);
             System.out.println();
         }
     }
@@ -42,6 +44,7 @@ public class Board {
     }
 
     public void printUpdatedBoard(List clicks, List flags, List mines) {
+        System.out.println("0 1 2 3 4 5 6 7 8 9");
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < length; j++) {
                 Point square = new Point(i, j);
@@ -92,6 +95,7 @@ public class Board {
                     System.out.print("□ ");
                 }
             }
+            System.out.print(i);
             System.out.println();
         }
     }
