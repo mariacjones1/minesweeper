@@ -17,23 +17,27 @@ public class Main {
         List<Point> clicks = new ArrayList<>();
         List<Point> flags = new ArrayList<>();
 
-        System.out.println("Choose a column 0-" + (board.width - 1));
-        int col = chooseCol.nextInt();
-        System.out.println("Choose a row 0-" + (board.length - 1));
-        int row = chooseRow.nextInt();
-        System.out.println("Do you want to click (C) or place a flag (F)?");
-        String click = chooseClick.nextLine().toUpperCase();
-        if (click.equals("C")) {
-            clicks.add(new Point(col, row));
-        } else if (click.equals("F")) {
-            flags.add(new Point(col, row));
-        } else {
-            System.out.println("Invalid choice.");
-        }
-        System.out.println(clicks);
-        System.out.println(flags);
+        Boolean runGame = true;
 
-        board.printUpdatedBoard(clicks, flags, mines);
+        do {
+            System.out.println("Choose a column 0-" + (board.width - 1));
+            int col = chooseCol.nextInt();
+            System.out.println("Choose a row 0-" + (board.length - 1));
+            int row = chooseRow.nextInt();
+            System.out.println("Do you want to click (C) or place a flag (F)?");
+            String click = chooseClick.nextLine().toUpperCase();
+            if (click.equals("C")) {
+                clicks.add(new Point(row, col));
+            } else if (click.equals("F")) {
+                flags.add(new Point(row, col));
+            } else {
+                System.out.println("Invalid choice.");
+            }
+            System.out.println(clicks);
+            System.out.println(flags);
+
+            board.printUpdatedBoard(clicks, flags, mines);
+        } while (runGame);
     }
 
 
