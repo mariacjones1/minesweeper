@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Board board = new Board();
-        List<Point> mines = board.placeMines(10, 10, 10);
+        List<Point> mines = board.placeMines(board.numOfMines, board.length, board.width);
         Scanner chooseCol = new Scanner(System.in);
         Scanner chooseRow = new Scanner(System.in);
         Scanner chooseClick = new Scanner(System.in);

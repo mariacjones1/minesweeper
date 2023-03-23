@@ -90,7 +90,7 @@ public class Board {
                         System.out.print(neighbours.size() + " ");
                     }
                 } else if (flags.contains(square)) {
-                    System.out.print("⛝ ");
+                    System.out.print("■ ");
                 } else {
                     System.out.print("□ ");
                 }
