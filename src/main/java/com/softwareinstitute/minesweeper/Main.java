@@ -9,7 +9,6 @@ public class Main {
     public static void main(String[] args) {
         Board board = new Board();
         List<Point> mines = board.placeMines(10, 10, 10);
-        System.out.println(mines);
         Scanner chooseCol = new Scanner(System.in);
         Scanner chooseRow = new Scanner(System.in);
         Scanner chooseClick = new Scanner(System.in);
@@ -39,8 +38,6 @@ public class Main {
             } else {
                 System.out.println("Invalid choice.");
             }
-            System.out.println(clicks);
-            System.out.println(flags);
 
             board.printUpdatedBoard(clicks, flags, mines);
             if (clicks.size() == (board.length * board.width - mines.size())) {
